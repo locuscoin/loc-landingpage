@@ -1,4 +1,5 @@
 # Hero with Background video and Masked title
+This component is heaviliy inspired by the Apple Photography how-to.
 
 ## References
  - [video + canvas = magic](http://html5doctor.com/video-canvas-magic/)

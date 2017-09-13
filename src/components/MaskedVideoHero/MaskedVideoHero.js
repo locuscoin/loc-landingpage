@@ -41,9 +41,25 @@ const HeroVideoContainer = styled.div`
 const HeroHeadlineWrapper = styled.div`
   position: absolute;
   z-index: 4;
-  width: 100%;
-  top: 30%;
+  width: 100vw;
+  height: 50vh;
+  top: 20vh;
   text-align: center;
+  animation: fadein 2.0s;
+  transition: opacity 2.0s cubic-bezier(0.94, 0.06, 0.05, 0.95);
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (min-width: 400px) {
+    top: 30vh;
+    height: 30vh;
+  }
 `;
 
 const TextMask = styled.div`
@@ -74,12 +90,16 @@ const TextMaskSvg = styled.svg`
 
 const TextMaskSvgContent = styled.text`
   text-anchor: middle;
-  font-size: 80px;
+  font-size: 65px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: -.005em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
+
+  @media only screen and (min-width: 400px) {
+    font-size: 80px;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -111,8 +131,22 @@ const HeroSubHeadline = styled.h2`
 `;
 
 class MaskedVideoHero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoReady: null
+    };
+  }
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    this.setState(this.state);
+  }
   render() {
     const assignVideoRef = el => (this.parentVideoRef = el);
+    const videoReady = () => {
+      this.setState({ videoReady: true });
+    };
+
     return (
       <MaskedVideoHeroSection>
         <HeroVideoContainer>
@@ -120,29 +154,31 @@ class MaskedVideoHero extends React.Component {
             videoRef={assignVideoRef}
             mp4={this.props.mp4}
             poster={this.props.poster}
+            ready={videoReady}
           />
         </HeroVideoContainer>
-        <HeroHeadlineWrapper>
-          <HeroContent>
-            <HeroHeadline>
-              {this.props.title}
-            </HeroHeadline>
-            <TextMask aria-label={this.props.maskedTitle}>
-              <TextMaskScreen />
-              <TextMaskVideoCanvas videoRef={this.parentVideoRef} />
-              <TextMaskSvg>
-                <clipPath id="text-mask-svg-path">
-                  <TextMaskSvgContent x="50%" y="100%">
-                    {this.props.masked}
-                  </TextMaskSvgContent>
-                </clipPath>
-              </TextMaskSvg>
-            </TextMask>
-            <HeroSubHeadline>
-              {this.props.subtitle}
-            </HeroSubHeadline>
-          </HeroContent>
-        </HeroHeadlineWrapper>
+        {this.state.videoReady &&
+          <HeroHeadlineWrapper>
+            <HeroContent>
+              <HeroHeadline>
+                {this.props.title}
+              </HeroHeadline>
+              <TextMask aria-label={this.props.maskedTitle}>
+                <TextMaskScreen />
+                <TextMaskVideoCanvas videoRef={this.parentVideoRef} />
+                <TextMaskSvg>
+                  <clipPath id="text-mask-svg-path">
+                    <TextMaskSvgContent x="50%" y="100%">
+                      {this.props.masked}
+                    </TextMaskSvgContent>
+                  </clipPath>
+                </TextMaskSvg>
+              </TextMask>
+              <HeroSubHeadline>
+                {this.props.subtitle}
+              </HeroSubHeadline>
+            </HeroContent>
+          </HeroHeadlineWrapper>}
       </MaskedVideoHeroSection>
     );
   }

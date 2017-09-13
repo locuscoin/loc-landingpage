@@ -6,8 +6,7 @@ class BackgroundVideo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      video: null,
-      ready: false
+      video: null
     };
     this.isReady = this.isReady.bind(this);
     this.assignRef = this.assignRef.bind(this);
@@ -20,9 +19,7 @@ class BackgroundVideo extends React.Component {
     ogg: PropTypes.string
   };
 
-  componentDidMount() {
-    // this._video.playbackRate = 1.0
-  }
+  componentDidMount() {}
 
   assignRef(ref) {
     this.props.videoRef(ref);
@@ -30,9 +27,8 @@ class BackgroundVideo extends React.Component {
   }
 
   isReady() {
-    if (this.state && this.state.video && this.state.video.readyState === 4) {
-      this.setState({ ready: true });
-    }
+    console.log('Video is ready');
+    this.props.ready();
   }
 
   render() {
@@ -45,6 +41,20 @@ class BackgroundVideo extends React.Component {
         autoPlay
         loop
         poster={poster}
+        style={{
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          display: 'block',
+          position: 'absolute',
+          zIndex: 1,
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          height: 'auto',
+          width: 'auto',
+          minHeight: '100%',
+          minWidth: '100%'
+        }}
       >
         {mp4 && <source src={mp4} type="video/mp4" />}
         {webm && <source src={webm} type="video/webm" />}
@@ -55,19 +65,7 @@ class BackgroundVideo extends React.Component {
 }
 
 const StyledBackgroundVideo = styled(BackgroundVideo)`
-  background-size: cover;
-  background-position: center top;
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  height: auto;
-  width: auto;
-  min-height: 100%;
-  min-width: 100%;
+  
 `;
 
 export default StyledBackgroundVideo;

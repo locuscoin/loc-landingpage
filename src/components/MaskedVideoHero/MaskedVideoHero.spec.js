@@ -2,25 +2,25 @@ import React from 'react';
 import MaskedVideoHero from './MaskedVideoHero';
 import renderer from 'react-test-renderer';
 
-import video from '../../assets/svartedalen-forests.mp4';
+import video from '../../assets/tempbgvideo.mp4';
+import fallbackbg from '../../assets/staticbg.jpg';
 
 // https://github.com/facebook/react/issues/7371
 jest.mock('react-dom', () => ({
-    findDOMNode: () => ({
-      getContext: jest.fn(),
-    }),
+  findDOMNode: () => ({
+    getContext: jest.fn()
   })
-);
+}));
 
 describe('MaskedVideoHero component', () => {
   it('should render without crashing', () => {
     const component = renderer.create(
       <MaskedVideoHero
-        title="Snabbt"
-        masked="trådlöst"
-        subtitle="bredband"
+        title="Some"
+        masked="Text"
+        subtitle="Here"
         mp4={video}
-        poster="https://s3-us-west-1.amazonaws.com/trippian/destination/94/tripbg.jpg"
+        poster={fallbackbg}
       />
     );
     let tree = component.toJSON();

@@ -2,61 +2,39 @@
 
 exports[`MaskedVideoHero component should render without crashing 1`] = `
 <section
-  className="sc-cpmLhU dKYarM"
+  className="sc-htpNat bZCkPo"
 >
   <div
-    className="sc-dymIpo cZbWEY"
+    className="sc-bxivhb dOcXlm"
   >
     <video
       autoPlay={true}
       loop={true}
       muted={true}
       onLoadedData={[Function]}
-      poster="https://s3-us-west-1.amazonaws.com/trippian/destination/94/tripbg.jpg"
+      poster="staticbg.jpg"
+      style={
+        Object {
+          "backgroundPosition": "center top",
+          "backgroundSize": "cover",
+          "display": "block",
+          "height": "auto",
+          "left": "50%",
+          "minHeight": "100%",
+          "minWidth": "100%",
+          "position": "absolute",
+          "top": 0,
+          "transform": "translateX(-50%)",
+          "width": "auto",
+          "zIndex": 1,
+        }
+      }
     >
       <source
-        src="svartedalen-forests.mp4"
+        src="tempbgvideo.mp4"
         type="video/mp4"
       />
     </video>
-  </div>
-  <div
-    className="sc-bnXvFD fFLVK"
-  >
-    <h1
-      className="sc-rBLzX dNlXpX"
-    >
-      Snabbt
-      <div
-        aria-label={undefined}
-        className="sc-gFaPwZ cTikKM"
-      >
-        <div
-          className="sc-fhYwyz fCEhru"
-        />
-        <canvas
-          className="sc-emmjRN MGHgU"
-          height={248}
-          width={1920}
-        />
-        <svg
-          className="sc-jzgbtB edQLRQ"
-        >
-          <clipPath
-            id="text-mask-svg-path"
-          >
-            <text
-              className="sc-gJWqzi efcgDa"
-              x="50%"
-              y="100%"
-            >
-              trådlöst
-            </text>
-          </clipPath>
-        </svg>
-      </div>
-      bredband
-    </h1>
   </div>
 </section>
 `;

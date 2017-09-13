@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MaskedVideoHero component should render without crashing 1`] = `
+<section
+  className="sc-htpNat bZCkPo"
+>
+  <div
+    className="sc-bxivhb dOcXlm"
+  >
+    <video
+      autoPlay={true}
+      loop={true}
+      muted={true}
+      onLoadedData={[Function]}
+      poster="staticbg.jpg"
+      style={
+        Object {
+          "backgroundPosition": "center top",
+          "backgroundSize": "cover",
+          "display": "block",
+          "height": "auto",
+          "left": "50%",
+          "minHeight": "100%",
+          "minWidth": "100%",
+          "position": "absolute",
+          "top": 0,
+          "transform": "translateX(-50%)",
+          "width": "auto",
+          "zIndex": 1,
+        }
+      }
+    >
+      <source
+        src="tempbgvideo.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</section>
+`;

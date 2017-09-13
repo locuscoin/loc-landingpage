@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+
+import video from './assets/tempbgvideo.mp4';
+import fallbackbg from './assets/staticbg.jpg';
+
+import MaskedVideoHero from './components/MaskedVideoHero';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <MaskedVideoHero
+        title="Blockchain geolocation"
+        masked="Locuscoin"
+        subtitle="Whitepaper coming soon"
+        mp4={video}
+        poster={fallbackbg}
+      />
     );
   }
 }

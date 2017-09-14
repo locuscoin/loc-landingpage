@@ -1,7 +1,7 @@
 import React from 'react';
-import MaskedVideoHero from './MaskedVideoHero';
 import renderer from 'react-test-renderer';
 
+import MaskedVideoHero from './MaskedVideoHero';
 import video from '../../assets/tempbgvideo.mp4';
 import fallbackbg from '../../assets/staticbg.jpg';
 

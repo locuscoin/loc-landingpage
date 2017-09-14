@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 class BackgroundVideo extends React.Component {
   constructor(props) {
@@ -8,7 +7,6 @@ class BackgroundVideo extends React.Component {
     this.state = {
       video: null
     };
-    this.isReady = this.isReady.bind(this);
     this.assignRef = this.assignRef.bind(this);
   }
 
@@ -19,16 +17,9 @@ class BackgroundVideo extends React.Component {
     ogg: PropTypes.string
   };
 
-  componentDidMount() {}
-
   assignRef(ref) {
     this.props.videoRef(ref);
     this.setState({ video: ref });
-  }
-
-  isReady() {
-    console.log('Video is ready');
-    this.props.ready();
   }
 
   render() {
@@ -36,7 +27,7 @@ class BackgroundVideo extends React.Component {
     return (
       <video
         ref={this.props.videoRef.bind(this)}
-        onLoadedData={this.isReady}
+        onLoadedData={() => this.props.ready()}
         muted
         autoPlay
         loop
@@ -64,8 +55,4 @@ class BackgroundVideo extends React.Component {
   }
 }
 
-const StyledBackgroundVideo = styled(BackgroundVideo)`
-  
-`;
-
-export default StyledBackgroundVideo;
+export default BackgroundVideo;

@@ -1,3 +1,1 @@
-import BackgroundVideo from './BackgroundVideo';
-
-export default BackgroundVideo;
+export { default } from './BackgroundVideo';

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component should render without crashing 1`] = `
+<nav
+  className="sc-bwzfXH kndEmM"
+>
+  <img
+    className="sc-bdVaJa sdCSB"
+    src="logo-white-256-v1.0.png"
+  />
+</nav>
+`;

@@ -42,7 +42,6 @@ const HeroHeadlineWrapper = styled.div`
   position: absolute;
   z-index: 4;
   width: 100vw;
-  height: 50vh;
   top: 20vh;
   text-align: center;
   animation: fadein 2.0s;
@@ -58,7 +57,6 @@ const HeroHeadlineWrapper = styled.div`
 
   @media only screen and (min-width: 400px) {
     top: 30vh;
-    height: 30vh;
   }
 `;
 

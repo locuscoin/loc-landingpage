@@ -5,8 +5,9 @@
   <br>
   Locuscoin.io
 	<br />
-	<br />
-	[![Discord](https://img.shields.io/discord/357682310000148480.svg?style=flat-square)](https://discord.gg/75HmCRP)
+	<a href="https://discord.gg/75HmCRP">
+		<img src="https://img.shields.io/discord/357682310000148480.svg?style=flat-square">
+	</a>
 </h1>
 
 Locuscoin is a location based cryptocurrency. It provides verifiable positioning and geobound contracts.

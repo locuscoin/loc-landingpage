@@ -28,19 +28,11 @@ class TextMaskVideoCanvas extends React.Component {
       if (this.canvas) {
         this.canvasCtx = this.canvas.getContext('2d');
         this.startCanvasRendering();
-      } else {
-        console.log('Missing canvas dom ref');
       }
-    } else {
-      console.log('Missing canvas ref');
     }
   }
   startCanvasRendering() {
     if (!this.props.videoRef || !this.refs.canvas || !this.canvasCtx) {
-      console.log(
-        `Missing videoRef:${!this.props.videoRef}, convas ref: ${!this.refs
-          .canvas}, canvasCtx: ${!this.canvasCtx}`
-      );
       return;
     }
     this.video = this.props.videoRef;
@@ -56,8 +48,6 @@ class TextMaskVideoCanvas extends React.Component {
         window.requestAnimationFrame(canvasRender);
       };
       window.requestAnimationFrame(canvasRender);
-    } else {
-      console.log('Missing canvas, video or requestAnimationFrame');
     }
   }
   render() {

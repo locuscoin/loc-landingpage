@@ -2,10 +2,10 @@
 
 exports[`MaskedVideoHero component should render without crashing 1`] = `
 <section
-  className="sc-htpNat bZCkPo"
+  className="sc-bwzfXH flhJX"
 >
   <div
-    className="sc-bxivhb dOcXlm"
+    className="sc-htpNat kOnjks"
   >
     <video
       autoPlay={true}

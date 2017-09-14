@@ -6,7 +6,7 @@
 	<br />
 	<br />
 	<a href="https://discord.gg/75HmCRP">
-		<img src="https://discordapp.com/api/guilds/357682310000148480/embed.png">
+		<img src="https://img.shields.io/discord/357682310000148480.svg?style=flat-square">
 	</a>
 </h1>
 
@@ -17,3 +17,6 @@ Locuscoin is a location based cryptocurrency. It provides verifiable positioning
 yarn install
 yarn start
 ```
+
+## Contributing
+See [Contributing](https://raw.githubusercontent.com/locuscoin/landingpage/master/CONTRIBUTING).

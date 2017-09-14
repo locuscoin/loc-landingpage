@@ -3,8 +3,8 @@ import { storiesOf } from '@kadira/storybook';
 
 import MaskedVideoHero from './MaskedVideoHero';
 
-import video from './assets/tempbgvideo.mp4';
-import fallbackbg from './assets/staticbg.jpg';
+import video from '../../assets/tempbgvideo.mp4';
+import fallbackbg from '../../assets/staticbg.jpg';
 
 storiesOf('MaskedVideoHero', module).add('default', () =>
   <MaskedVideoHero

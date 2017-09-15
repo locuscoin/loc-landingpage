@@ -19,4 +19,4 @@ yarn start
 ```
 
 ## Contributing
-See [Contributing](https://raw.githubusercontent.com/locuscoin/landingpage/master/CONTRIBUTING).
+See [Contributing](https://github.com/locuscoin/landingpage/blob/master/CONTRIBUTING.md).

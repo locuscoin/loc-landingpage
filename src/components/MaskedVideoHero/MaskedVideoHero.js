@@ -26,7 +26,7 @@ const HeroVideoContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
   }
   background-repeat: no-repeat;
-  background-image: url(${props => props.posterUrl || ''});
+  background-image: url(${({ background }) => background || ''});
   position: absolute;
   z-index: 1;
   top: 0;
@@ -147,7 +147,7 @@ class MaskedVideoHero extends React.Component {
 
     return (
       <MaskedVideoHeroSection>
-        <HeroVideoContainer>
+        <HeroVideoContainer background={this.props.poster}>
           <BackgroundVideo
             videoRef={assignVideoRef}
             mp4={this.props.mp4}

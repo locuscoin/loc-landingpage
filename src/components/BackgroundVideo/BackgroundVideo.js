@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 class BackgroundVideo extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class BackgroundVideo extends React.Component {
   }
 
   render() {
-    const { source, poster, mp4, webm, ogg } = this.props;
+    const { className, source, poster, mp4, webm, ogg } = this.props;
     return (
       <video
         ref={this.props.videoRef.bind(this)}
@@ -32,19 +33,19 @@ class BackgroundVideo extends React.Component {
         autoPlay
         loop
         poster={poster}
+        className={className}
         style={{
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          display: 'block',
           position: 'absolute',
           zIndex: 1,
           top: 0,
           left: '50%',
-          transform: 'translateX(-50%)',
           height: 'auto',
           width: 'auto',
           minHeight: '100%',
-          minWidth: '100%'
+          minWidth: '100%',
+          transform: 'translateX(-50%)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top'
         }}
       >
         {mp4 && <source src={mp4} type="video/mp4" />}
@@ -55,4 +56,13 @@ class BackgroundVideo extends React.Component {
   }
 }
 
-export default BackgroundVideo;
+// Put media queries in styled component
+const StyledVideo = styled(BackgroundVideo)`
+  display: none;
+  
+  @media only screen and (min-width: 400px) {
+    display: block;
+  }
+`;
+
+export default StyledVideo;

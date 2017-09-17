@@ -1,6 +1,6 @@
 <h1 align="center">
 	<br />
-	<img width="175" src="https://raw.githubusercontent.com/locuscoin/branding/master/app-icon-rounded-v1.0/iTunesArtwork@2x.png" alt="awesome sweden">
+	<img width="175" src="https://raw.githubusercontent.com/locuscoin/branding/master/app-icon-rounded-v1.0/iTunesArtwork@2x.png" alt="Locuscoin">
 	<br />
   Locuscoin.io
 	<br />
@@ -10,7 +10,7 @@
 	</a>
 </h1>
 
-Locuscoin is a location based cryptocurrency. It provides verifiable positioning and geobound contracts.
+Locuscoin is a location based cryptocurrency that provides verifiable positioning and geobound contracts.
 
 ## Development
 ```

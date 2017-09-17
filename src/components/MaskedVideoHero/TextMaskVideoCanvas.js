@@ -10,9 +10,7 @@ const StyledCanvas = styled.canvas`
   z-index: 2;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-filter: blur(15px) saturate(250%) brightness(200%);
   filter: blur(15px) saturate(250%) brightness(200%);
   opacity: 0.8;
 `;

@@ -44,17 +44,19 @@ const HeroHeadlineWrapper = styled.div`
   width: 100vw;
   top: 20vh;
   text-align: center;
+
   animation: fadein 2.0s;
   transition: opacity 2.0s cubic-bezier(0.94, 0.06, 0.05, 0.95);
   @keyframes fadein {
     from {
       opacity: 0;
+      font-size: 65px;
     }
     to {
       opacity: 1;
+      font-size: 65px;
     }
   }
-
   @media only screen and (min-width: 400px) {
     top: 30vh;
   }
@@ -66,7 +68,8 @@ const TextMask = styled.div`
   overflow: hidden;
   -webkit-clip-path: url(#text-mask-svg-path);
   clip-path: url(#text-mask-svg-path);
-  ${'' /* min-height: 160px; */} opacity: 1;
+  opacity: 1;
+  height: 90px;
 `;
 
 const TextMaskScreen = styled.div`
@@ -142,7 +145,11 @@ class MaskedVideoHero extends React.Component {
   render() {
     const assignVideoRef = el => (this.parentVideoRef = el);
     const videoReady = () => {
-      this.setState({ videoReady: true });
+      // TO is here for making sure the video is fully loaded
+      // Omiting this creates some sort of race bug when CPU load is high
+      setTimeout(() => {
+        this.setState({ videoReady: true });
+      }, 1000);
     };
 
     return (

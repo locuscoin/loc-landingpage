@@ -10,6 +10,11 @@ import MaskedVideoHero from './components/MaskedVideoHero';
 import Menu from './components/Menu';
 import Hero from './components/Hero';
 import Title from './components/Title';
+import EmailForm from './components/EmailForm';
+
+import withEmailForm from './containers/withEmailForm';
+
+const EmailFormContainer = withEmailForm(EmailForm);
 
 const SilentAnchor = styled.a`
   display: block;
@@ -37,6 +42,7 @@ const App = props =>
       <Title size="huge">
         Join us building the next decentralized positioning system
       </Title>
+      <EmailFormContainer />
       <SilentAnchor href="https://github.com/locuscoin">
         <FaGithub size={70} />
       </SilentAnchor>

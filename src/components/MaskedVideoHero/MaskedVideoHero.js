@@ -8,7 +8,7 @@ const MaskedVideoHeroSection = styled.section`
   position: relative;
   z-index: 1;
   overflow: hidden;
-  height: 90vh;
+  height: 100vh;
   min-height: 620px;
   max-height: 980px;
 `;

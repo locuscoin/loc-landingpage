@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import BackgroundVideo from '../BackgroundVideo';
-import TextMaskVideoCanvas from './TextMaskVideoCanvas';
+import BackgroundVideo from "../BackgroundVideo";
+import TextMaskVideoCanvas from "./TextMaskVideoCanvas";
 
 const MaskedVideoHeroSection = styled.section`
   position: relative;
@@ -15,7 +15,7 @@ const MaskedVideoHeroSection = styled.section`
 
 const HeroVideoContainer = styled.div`
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     z-index: 2;
@@ -26,7 +26,7 @@ const HeroVideoContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
   }
   background-repeat: no-repeat;
-  background-image: url(${({ background }) => background || ''});
+  background-image: url(${({ background }) => background || ""});
   position: absolute;
   z-index: 1;
   top: 0;
@@ -45,8 +45,8 @@ const HeroHeadlineWrapper = styled.div`
   top: 20vh;
   text-align: center;
 
-  animation: fadein 2.0s;
-  transition: opacity 2.0s cubic-bezier(0.94, 0.06, 0.05, 0.95);
+  animation: fadein 2s;
+  transition: opacity 2s cubic-bezier(0.94, 0.06, 0.05, 0.95);
   @keyframes fadein {
     from {
       opacity: 0;
@@ -94,7 +94,7 @@ const TextMaskSvgContent = styled.text`
   font-size: 65px;
   line-height: 1;
   font-weight: 600;
-  letter-spacing: -.005em;
+  letter-spacing: -0.005em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
 
@@ -113,7 +113,7 @@ const HeroHeadline = styled.h1`
   font-size: 50px;
   line-height: 1;
   font-weight: 100;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
   color: #fff;
@@ -124,7 +124,7 @@ const HeroSubHeadline = styled.h2`
   font-size: 40px;
   line-height: 1;
   font-weight: 100;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
   color: #fff;
@@ -158,16 +158,15 @@ class MaskedVideoHero extends React.Component {
           <BackgroundVideo
             videoRef={assignVideoRef}
             mp4={this.props.mp4}
+            webm={this.props.webm}
             poster={this.props.poster}
             ready={videoReady}
           />
         </HeroVideoContainer>
-        {this.state.videoReady &&
+        {this.state.videoReady && (
           <HeroHeadlineWrapper>
             <HeroContent>
-              <HeroHeadline>
-                {this.props.title}
-              </HeroHeadline>
+              <HeroHeadline>{this.props.title}</HeroHeadline>
               <TextMask aria-label={this.props.maskedTitle}>
                 <TextMaskScreen />
                 <TextMaskVideoCanvas videoRef={this.parentVideoRef} />
@@ -179,11 +178,10 @@ class MaskedVideoHero extends React.Component {
                   </clipPath>
                 </TextMaskSvg>
               </TextMask>
-              <HeroSubHeadline>
-                {this.props.subtitle}
-              </HeroSubHeadline>
+              <HeroSubHeadline>{this.props.subtitle}</HeroSubHeadline>
             </HeroContent>
-          </HeroHeadlineWrapper>}
+          </HeroHeadlineWrapper>
+        )}
       </MaskedVideoHeroSection>
     );
   }

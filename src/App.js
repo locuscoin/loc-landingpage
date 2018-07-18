@@ -1,18 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-import './index.css';
+import React from "react";
+import styled from "styled-components";
+import "./index.css";
 
-import video from './assets/tempbgvideo.mp4';
-import fallbackbg from './assets/staticbg.jpg';
-import FaGithub from 'react-icons/lib/fa/github';
+import video from "./assets/Candolim-Beach.mp4";
+import videoWebm from "./assets/Candolim-Beach.webm";
+import fallbackbg from "./assets/Candolim-Beach.jpg";
 
-import MaskedVideoHero from './components/MaskedVideoHero';
-import Menu from './components/Menu';
-import Hero from './components/Hero';
-import Title from './components/Title';
-import EmailForm from './components/EmailForm';
+import FaGithub from "react-icons/lib/fa/github";
 
-import withEmailForm from './containers/withEmailForm';
+import MaskedVideoHero from "./components/MaskedVideoHero";
+import Menu from "./components/Menu";
+import Hero from "./components/Hero";
+import Title from "./components/Title";
+import EmailForm from "./components/EmailForm";
+
+import withEmailForm from "./containers/withEmailForm";
 
 const EmailFormContainer = withEmailForm(EmailForm);
 
@@ -23,14 +25,15 @@ const SilentAnchor = styled.a`
   color: inherit;
 `;
 
-const App = props =>
+const App = props => (
   <header>
     <Menu />
     <MaskedVideoHero
       title="Blockchain Geolocation"
       masked="Locuscoin"
-      subtitle="Whitepaper coming soon"
+      subtitle="POC coming soon"
       mp4={video}
+      webm={videoWebm}
       poster={fallbackbg}
     />
     <Hero
@@ -47,6 +50,7 @@ const App = props =>
         <FaGithub size={70} />
       </SilentAnchor>
     </Hero>
-  </header>;
+  </header>
+);
 
 export default App;
